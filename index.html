@@ -1,143 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Do You Promise?</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Do You Promise?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background: linear-gradient(#f6e7c1, #c9a86a);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #2b1b0f;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: radial-gradient(circle at top, #f6e7c1, #c9a86a);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2b1b0f;
+    }
 
-.card {
-  background: #fff8e7;
-  padding: 40px;
-  max-width: 420px;
-  text-align: center;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-}
+    .card {
+      background: #fff8e7;
+      padding: 40px;
+      max-width: 420px;
+      text-align: center;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
 
-button {
-  padding: 12px 24px;
-  margin: 10px;
-  border: none;
-  border-radius: 30px;
-  font-size: 1em;
-  cursor: pointer;
-}
+    h1 {
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
 
-.yes {
-  background: #7a4a2e;
-  color: #fff;
-}
+    p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
 
-.no {
-  background: #e0d1b2;
-}
+    button {
+      padding: 12px 24px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-.modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.75);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
+    .yes {
+      background: #7a4a2e;
+      color: #fff;
+    }
 
-.modal-content {
-  background: #fff3d6;
-  padding: 40px;
-  max-width: 900px;
-  border-radius: 14px;
-}
+    .no {
+      background: #e0d1b2;
+    }
 
-.typewriter {
-  white-space: pre-line;
-  line-height: 1.6;
-  margin-top: 20px;
-}
-</style>
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      background: #fff3d6;
+      padding: 50px;
+      max-width: 900px;
+      border-radius: 14px;
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.15);
+    }
+
+    .typewriter {
+      white-space: pre-line;
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    .close {
+      margin-top: 30px;
+      background: #7a4a2e;
+      color: white;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="card">
-  <h1>One Question</h1>
-  <p>Before we go any further…</p>
-  <p><strong>Do you promise?</strong></p>
-  <button class="yes" onclick="openModal()">Yes, I do</button>
-  <button class="no" onclick="alert('Some promises deserve a pause.')">
-    Let me think
-  </button>
-</div>
+  <div class="card">
+    <h1>One Question</h1>
+    <p>Before we go any further…</p>
+    <p><strong>Do you promise?</strong></p>
 
-<div class="modal" id="promiseModal">
-  <div class="modal-content">
-    <h2 style="text-align:center;">THE CONSTITUTION OF OUR PROMISE</h2>
-    <div id="text" class="typewriter"></div>
-
-    <p style="margin-top:30px;">
-      Signed with intention,<br><br>
-      <strong>Ms. Arisha Qureshi</strong><br>
-      <strong>Amaan Ali</strong>
-    </p>
-
-    <button class="yes" onclick="closeModal()">Close</button>
+    <button class="yes" onclick="openModal()">Yes, I do</button>
+    <button class="no" onclick="alert('Some promises deserve a pause before they are spoken.')">
+      Let me think
+    </button>
   </div>
-</div>
 
-<script>
-var content =
-"We, Ms. Arisha Qureshi, daughter of Mrs. Sajida Qureshi,\n"+
-"and Amaan Ali, son of Mrs. Naheed Sultana,\n"+
-"in full possession of our hearts and hopeful souls,\n"+
-"do hereby adopt this Constitution of Love.\n\n"+
-"LOVE shall be our supreme law.\n"+
-"A rainbow that may change its colors,\n"+
-"yet never stop being love.\n\n"+
-"TOGETHERNESS shall be non-negotiable.\n"+
-"Walking away is unconstitutional.\n\n"+
-"STRENGTH shall be shared.\n"+
-"Silence shall never be punishment.\n\n"+
-"GROWTH shall be encouraged.\n"+
-"We shall grow without outgrowing each other.\n\n"+
-"FOREVER shall mean commitment.\n"+
-"Choosing each other again and again.\n\n"+
-"This promise may evolve,\n"+
-"but it shall never be broken.";
+  <div class="modal" id="promiseModal">
+    <div class="modal-content">
+      <h2 style="text-align:center;">THE CONSTITUTION OF OUR PROMISE</h2>
+      <div class="typewriter" id="text"></div>
 
-var index = 0;
+      <p style="margin-top:30px;">
+        Signed with intention,<br><br>
+        <strong>Ms. Arisha Qureshi</strong><br>
+        <strong>Amaan Ali</strong>
+      </p>
 
-function typeWriter() {
-  if (index < content.length) {
-    document.getElementById("text").innerHTML += content.charAt(index);
-    index++;
-    setTimeout(typeWriter, 30);
-  }
-}
+      <button class="close" onclick="closeModal()">Close</button>
+    </div>
+  </div>
 
-function openModal() {
-  document.getElementById("promiseModal").style.display = "flex";
-  document.getElementById("text").innerHTML = "";
-  index = 0;
-  typeWriter();
-}
+  <script>
+    const content = `
+We, Ms. Arisha Qureshi, daughter of Mrs. Sajida Qureshi,
+and Amaan Ali, son of Mrs. Naheed Sultana,
+in full possession of our hearts and hopeful souls,
+do hereby adopt this Constitution of Love.
 
-function closeModal() {
-  document.getElementById("promiseModal").style.display = "none";
-}
-</script>
+LOVE shall be our supreme law —
+a rainbow that may change its colors,
+from red to yellow, from bright to soft,
+yet never cease to be love.
+
+TOGETHERNESS shall be non-negotiable.
+Walking away is unconstitutional.
+Staying, choosing, and trying shall be our default response.
+
+STRENGTH shall be shared.
+On days one is tired, the other shall stand taller.
+Silence shall never be punishment,
+and care shall never be conditional.
+
+GROWTH shall be encouraged.
+We shall grow without outgrowing each other,
+change without losing us,
+and dream without fear of being alone.
+
+FOREVER shall mean commitment, not perfection.
+Choosing each other — again and again —
+especially on ordinary days.
+
+This promise may evolve,
+but it shall never be broken.
+`;
+
+    let index = 0;
+
+    function typeWriter() {
+      if (index < content.length) {
+        document.getElementById("text").innerHTML += content.charAt(index);
+        index++;
+        setTimeout(typeWriter, 25);
+      }
+    }
+
+    function openModal() {
+      document.getElementById("promiseModal").style.display = "flex";
+      document.getElementById("text").innerHTML = "";
+      index = 0;
+      typeWriter();
+    }
+
+    function closeModal() {
+      document.getElementById("promiseModal").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
