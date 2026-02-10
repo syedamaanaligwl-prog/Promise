@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Do You Promise?</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: linear-gradient(#f6e7c1, #c9a86a);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2b1b0f;
+}
+
+.card {
+  background: #fff8e7;
+  padding: 40px;
+  max-width: 420px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+button {
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.yes {
+  background: #7a4a2e;
+  color: #fff;
+}
+
+.no {
+  background: #e0d1b2;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #fff3d6;
+  padding: 40px;
+  max-width: 900px;
+  border-radius: 14px;
+}
+
+.typewriter {
+  white-space: pre-line;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>One Question</h1>
+  <p>Before we go any further…</p>
+  <p><strong>Do you promise?</strong></p>
+  <button class="yes" onclick="openModal()">Yes, I do</button>
+  <button class="no" onclick="alert('Some promises deserve a pause.')">
+    Let me think
+  </button>
+</div>
+
+<div class="modal" id="promiseModal">
+  <div class="modal-content">
+    <h2 style="text-align:center;">THE CONSTITUTION OF OUR PROMISE</h2>
+    <div id="text" class="typewriter"></div>
+
+    <p style="margin-top:30px;">
+      Signed with intention,<br><br>
+      <strong>Ms. Arisha Qureshi</strong><br>
+      <strong>Amaan Ali</strong>
+    </p>
+
+    <button class="yes" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+var content =
+"We, Ms. Arisha Qureshi, daughter of Mrs. Sajida Qureshi,\n"+
+"and Amaan Ali, son of Mrs. Naheed Sultana,\n"+
+"in full possession of our hearts and hopeful souls,\n"+
+"do hereby adopt this Constitution of Love.\n\n"+
+"LOVE shall be our supreme law.\n"+
+"A rainbow that may change its colors,\n"+
+"yet never stop being love.\n\n"+
+"TOGETHERNESS shall be non-negotiable.\n"+
+"Walking away is unconstitutional.\n\n"+
+"STRENGTH shall be shared.\n"+
+"Silence shall never be punishment.\n\n"+
+"GROWTH shall be encouraged.\n"+
+"We shall grow without outgrowing each other.\n\n"+
+"FOREVER shall mean commitment.\n"+
+"Choosing each other again and again.\n\n"+
+"This promise may evolve,\n"+
+"but it shall never be broken.";
+
+var index = 0;
+
+function typeWriter() {
+  if (index < content.length) {
+    document.getElementById("text").innerHTML += content.charAt(index);
+    index++;
+    setTimeout(typeWriter, 30);
+  }
+}
+
+function openModal() {
+  document.getElementById("promiseModal").style.display = "flex";
+  document.getElementById("text").innerHTML = "";
+  index = 0;
+  typeWriter();
+}
+
+function closeModal() {
+  document.getElementById("promiseModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
